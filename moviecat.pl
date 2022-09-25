@@ -55,15 +55,15 @@ my $g_stime = $hires_time->();
 # report directory instead of program dir, because the user will not have
 # permission to write to it. And program dir is absolute instead of deduced
 # from binary pathname
-my $system_install = 0;
+my $system_install = 1;
 
 my $prog_dir;
 
-if ($system_install) {
-    $prog_dir = "/usr/share/smoviecat";
-} else {
+# if ($system_install) {
+#     $prog_dir = "/usr/share/smoviecat";
+# } else {
     $prog_dir = $FindBin::Bin;
-}
+# }
 push @INC, "$prog_dir/lib";
 require "IMDB_Movie.pm";
 
